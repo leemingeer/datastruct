@@ -18,6 +18,24 @@ def is_palindrome2(s):
             r -= 1
     return True
 
+#abccbd => a#b#c#c#b#d
+#abcbd => a#b#c#b#d
+def basic_solution(pre_str):
+    strs = '#'.join(pre_str)
+    max_length = 0
+    max_strs = ''
+    for i in range(len(strs) - 1):
+        r = 0
+        while strs[i-r] == strs[i+r]:
+            r += 1
+            #check next point first,other index of i-r may out of strs range
+            if i - r < 0 or i + r > len(strs) -1:
+                break
+        if r > max_length:
+            max_length = 2 * r - 1
+            max_strs = strs[i - r + 1: i + r]
+    return max_strs.replace('#', '')
+
 
 def manacher_solution(preS):
     s = '#' + '#'.join(preS) + '#'
@@ -48,6 +66,7 @@ def manacher_solution(preS):
 
 
 if __name__ == '__main__':
-    print is_palindrome('abd')
-    print is_palindrome2('aba')
-    print manacher_solution('abcddcbefe')
+    #print is_palindrome('abd')
+    #print is_palindrome2('aba')
+    #print manacher_solution('abcddcbefe')
+    print basic_solution('abcbaef')
