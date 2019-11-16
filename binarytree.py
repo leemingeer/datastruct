@@ -37,6 +37,7 @@ class Tree(object):
         if self.root is None:
             return
        #self.root is the head node of tree
+       #use list queue to controller the order
         queue = [self.root]
         while queue:
             cur_node = queue.pop(0)
