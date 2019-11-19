@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from __future__ import print_function
 
 class Node(object):
     def __init__(self,item):
@@ -41,7 +42,7 @@ class Tree(object):
         queue = [self.root]
         while queue:
             cur_node = queue.pop(0)
-            print(cur_node.data)
+            print(cur_node.data, end=',')
             if cur_node.left is not None:
                 queue.append(cur_node.left)  
             if cur_node.right is not None:
@@ -81,13 +82,13 @@ if __name__ == '__main__':
     tree.add(5)
     tree.add(8)
     tree.add(7)
-    print 'print randomly'
-    print tree.root.data 
-    print tree.root.left.data 
-    print tree.root.left.right.data 
-    print tree.root.right.data 
-    print tree.root.right.right.data 
-    print 'breadth priority travel'
+    print('print randomly')
+    print(tree.root.data)
+    print(tree.root.left.data) 
+    print(tree.root.left.right.data) 
+    print(tree.root.right.data)
+    print(tree.root.right.right.data) 
+    print('breadth priority travel')
     tree.breadth_travel(tree.root)
     #tree is a tree
     #t.root is the first node(an object), that is base node 
