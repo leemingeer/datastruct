@@ -48,9 +48,31 @@ def mysort(alist):
             j -= 1
     return alist
 
+def mysort2(A):
+    i = 0
+    j = len(A) - 1
+    print A
+    #while i <= j:
+    while True:
+        while A[i] != 1 and i <= j:
+            i += 1
+        while A[j] != 0 and i <= j:
+            j -= 1
+        if j >= i:
+            A[i], A[j] = A[j], A[i]
+        else:
+            break
+    print A
+        
+
+
+    
+
 if __name__ == '__main__':
     #python dadasort.py
-    unittest.main()
+    #unittest.main()
+    alist1 = [0,1,0,1,1,1,1,0,0,1]
+    mysort2(alist1)
 
     #python -m unittest 编译该层目录下继承unittest模块的所有py文件
 
