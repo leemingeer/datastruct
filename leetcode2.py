@@ -62,11 +62,11 @@ class Solution(object):
         start = ListNode(0)
         node = start
         carry = 0
-        while (l1 or l2):
+        while(l1 or l2):
             val1 = l1.val if l1 else 0
             val2 = l2.val if l2 else 0
             s = val1 + val2 + carry
-            carry = s // 10
+            carry = s // 10 # keep the value in the next loop
             val = s % 10
             if l1:
                 l1 = l1.next
